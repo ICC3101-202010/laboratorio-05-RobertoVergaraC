@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Solucion_Lab_21_abril
+namespace Laboratorio5Robertovergara
 {
     public class MailSender
     {
@@ -21,5 +21,17 @@ namespace Solucion_Lab_21_abril
             Thread.Sleep(2000);
         }
 
+        //1.- Definir el delegate
+        public delegate void SentEmailEventHandler(object source, EventArgs args);
+        //2.- Definir el evento basado en el delegate anterior
+        public event SentEmailEventHandler EmailSent;
+        //3.- Disparar el evento
+        protected virtual void OnEmailSent()
+        {
+            if (EmailSent != null)
+            {
+                EmailSent(this, new EventArgs());
+            }
+        }
     }
 }

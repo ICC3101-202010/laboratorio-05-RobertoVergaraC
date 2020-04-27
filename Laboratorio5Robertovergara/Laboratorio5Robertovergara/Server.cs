@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Solucion_Lab_21_abril
+namespace Laboratorio5Robertovergara
 {
     public class Server
     {
@@ -121,5 +121,11 @@ namespace Solucion_Lab_21_abril
             return "http://pluscorporation.com/verificar-correo.php?=" + usr + "_" + result;
         }
 
+        public void OnEmailVerified(object source, EventArgs args)
+        {
+            Thread.Sleep(1500);
+            Console.WriteLine("\nEl correo fue verificado correctamente\n");
+            Thread.Sleep(1500);
+        }
     }
 }

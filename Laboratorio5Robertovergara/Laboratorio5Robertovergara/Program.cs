@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace Solucion_Lab_21_abril
+namespace Laboratorio5Robertovergara
 {
     class Program
     {
@@ -13,7 +13,7 @@ namespace Solucion_Lab_21_abril
             Server server = new Server(database);
             MailSender mailSender = new MailSender();
             SMSSender smsSender = new SMSSender();
-
+            User user = new User();
 
             //Suscribir los que escuchan los eventos
             // Notar que para poder realizar las suscripciones es necesario tener instancias de las clases, y que los parametros
@@ -24,7 +24,10 @@ namespace Solucion_Lab_21_abril
             server.PasswordChanged += mailSender.OnPasswordChanged;
             //3- Suscribir OnCambiadaContrasena de smsSender para que escuche el evento CambiadaContrasena enviado por servidor
             server.PasswordChanged += smsSender.OnPasswordChanged;
-
+            //4- Suscribir OnEmailSent de User al evento EmailSent de MailSender
+            mailSender.EmailSent += user.OnEmailSent;
+            //5- Suscribir OnEmailVerified de Server al evento EmailVerified de User
+            user.EmailVerified += server.OnEmailVerified;
 
             // Controla la ejecucion mientras el usuario no quiera salir
             bool exec = true;

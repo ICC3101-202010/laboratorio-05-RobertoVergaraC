@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Solucion_Lab_21_abril
+namespace Laboratorio5Robertovergara
 {
     public class ChangePasswordEventArgs : EventArgs
     {
