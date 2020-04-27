@@ -28,10 +28,7 @@ namespace Laboratorio5Robertovergara
         //3.- Disparar el evento
         protected virtual void OnEmailSent()
         {
-            if (EmailSent != null)
-            {
                 EmailSent(this, new EventArgs());
-            }
         }
     }
 }

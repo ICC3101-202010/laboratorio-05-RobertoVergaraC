@@ -40,6 +40,8 @@ namespace Laboratorio5Robertovergara
                     case "Registrarse":
                         Console.Clear();
                         server.Register();
+                        //Suponiendo que el mail si debería haber llegado
+                        user.OnEmailSent(new object(),new EventArgs());
                         break;
                     case "Cambiar contrasena":
                         Console.Clear();

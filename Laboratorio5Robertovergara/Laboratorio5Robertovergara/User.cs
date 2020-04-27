@@ -15,21 +15,19 @@ namespace Laboratorio5Robertovergara
         //3.- Disparar el evento
         protected virtual void OnEmailVerified()
         {
-            if (EmailVerified != null)
-            {
                 EmailVerified(this, new EventArgs());
-            }
         }
         
         public void OnEmailSent(object source, EventArgs args)
         {
-            Console.Write("¿Quiere revisar su correo? (si)(no)");
+            Console.Write("¿Quiere revisar su correo? (si)(no)\n");
             while (true)
             {
                 string option = Console.ReadLine();
                 if (option == "si")
                 {
-                    OnEmailSent(source, args);
+                    EmailVerified(new object(), new EventArgs());
+                    break;
                 }
                 else if (option == "no") { break; }
                 else { Console.WriteLine("La opción que selecciono no es válida seleccione (si) o (no)"); }
