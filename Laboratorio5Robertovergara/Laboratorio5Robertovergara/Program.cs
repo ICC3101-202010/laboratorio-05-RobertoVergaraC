@@ -39,9 +39,9 @@ namespace Laboratorio5Robertovergara
                 {
                     case "Registrarse":
                         Console.Clear();
-                        server.Register();
+                        bool option = server.Register();
                         //Suponiendo que el mail si debería haber llegado
-                        user.OnEmailSent(new object(),new EventArgs());
+                        if (option == true) { user.OnEmailSent(new object(), new EventArgs());}
                         break;
                     case "Cambiar contrasena":
                         Console.Clear();

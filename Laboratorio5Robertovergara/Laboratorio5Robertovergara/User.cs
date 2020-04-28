@@ -20,6 +20,7 @@ namespace Laboratorio5Robertovergara
         
         public void OnEmailSent(object source, EventArgs args)
         {
+
             Console.Write("¿Quiere revisar su correo? (si)(no)\n");
             while (true)
             {

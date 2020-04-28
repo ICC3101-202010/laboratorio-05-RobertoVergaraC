@@ -51,7 +51,7 @@ namespace Laboratorio5Robertovergara
 
 
         // Realiza el registro 
-        public void Register()
+        public bool Register()
         {
             // Pedimos todos los datos necesarios
             Console.Write("Bienvenido! Ingrese sus datos de registro en PlusCorporation\nUsuario: ");
@@ -72,11 +72,13 @@ namespace Laboratorio5Robertovergara
             {
                 // Disparamos el evento
                 OnRegistered(usr, psswd, verificationlink: verificationLink, email: email);
+                return true;
             }
             else
             {
                 // Mostramos el error
                 Console.WriteLine("[!] ERROR: " + result + "\n");
+                return false;
             }
         }
 
