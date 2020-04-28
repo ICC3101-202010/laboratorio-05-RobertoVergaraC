@@ -27,7 +27,7 @@ namespace Laboratorio5Robertovergara
                 string option = Console.ReadLine();
                 if (option == "si")
                 {
-                    EmailVerified(new object(), new EventArgs());
+                    EmailVerified(source, args);
                     break;
                 }
                 else if (option == "no") { break; }
